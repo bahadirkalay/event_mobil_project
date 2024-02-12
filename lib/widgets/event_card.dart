@@ -20,7 +20,7 @@ class EventCardWidget extends StatelessWidget {
     final ss = MediaQuery.of(context).size;
 
     return InkWell(
-      onTap: () {},
+      onTap: onTap,
       child: Container(
         decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -57,7 +57,7 @@ class EventCardWidget extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(title??"",
+                        Text(title ?? "",
                             style: Theme.of(context)
                                 .textTheme
                                 .titleMedium!
@@ -71,11 +71,10 @@ class EventCardWidget extends StatelessWidget {
                           children: [
                             Row(
                               children: [
-                               const Icon(Icons.date_range,
+                                const Icon(Icons.date_range,
                                     size: 13,
-                                    color:  Color.fromARGB(
-                                        255, 117, 117, 117)),
-                                Text(startDate??"",
+                                    color: Color.fromARGB(255, 117, 117, 117)),
+                                Text(startDate ?? "",
                                     style: Theme.of(context)
                                         .textTheme
                                         .labelSmall!
@@ -93,7 +92,7 @@ class EventCardWidget extends StatelessWidget {
                                   size: 13,
                                   color: Colors.grey.shade600,
                                 ),
-                                Text(endDate??"",
+                                Text(endDate ?? "",
                                     style: Theme.of(context)
                                         .textTheme
                                         .labelSmall!
@@ -105,8 +104,8 @@ class EventCardWidget extends StatelessWidget {
                         )
                       ],
                     ),
-                     Text(
-                      salary??"",
+                    Text(
+                      salary ?? "",
                       style: const TextStyle(
                           color: ColorPalette.primary,
                           fontWeight: FontWeight.bold),

@@ -1,3 +1,4 @@
+import 'package:event_mobil_project/views/event_detail_view/event_detail_view.dart';
 import 'package:event_mobil_project/widgets/event_card.dart';
 import 'package:flutter/material.dart';
 
@@ -34,7 +35,13 @@ class EventHomeView extends StatelessWidget {
                 startDate: "02:02:2024",
                 endDate: "02:02:2024",
                 salary: "1340 ₺",
-                onTap: (){},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const EventDetailView()),
+                  );
+                },
               )
             ],
           ),
