@@ -6,6 +6,7 @@ class EventCardWidget extends StatelessWidget {
   final String? startDate;
   final String? endDate;
   final String? salary;
+  final String? image;
   final Function()? onTap;
   const EventCardWidget(
       {super.key,
@@ -13,6 +14,7 @@ class EventCardWidget extends StatelessWidget {
       this.startDate,
       this.endDate,
       this.salary,
+      this.image,
       this.onTap});
 
   @override
@@ -22,11 +24,12 @@ class EventCardWidget extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(20)),
+        margin: EdgeInsets.only(bottom: ss.width * 0.06),
+        decoration: BoxDecoration(
+            borderRadius: const BorderRadius.all(Radius.circular(20)),
             color: ColorPalette.primary,
             image: DecorationImage(
-                image: NetworkImage(
+                image: NetworkImage(image ??
                     "https://images.unsplash.com/photo-1682695794947-17061dc284dd?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
                 fit: BoxFit.fitHeight,
                 opacity: 0.7)),
