@@ -60,7 +60,7 @@ class EventCardWidget extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(title ?? "",
+                        Text(title!.substring(0, 30) ?? "",
                             style: Theme.of(context)
                                 .textTheme
                                 .titleMedium!
